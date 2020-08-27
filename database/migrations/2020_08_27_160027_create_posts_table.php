@@ -18,6 +18,10 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('content');
             $table->timestamps();
+
+            $table->foreignId('user_id')
+              ->constrained()
+              ->onDelete('cascade');
         });
     }
 
