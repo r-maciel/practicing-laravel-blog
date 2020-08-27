@@ -48,10 +48,12 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {   
+        /* This is other way to make the validatons */
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'alias' => ['required', 'string', 'max:100'],
+            /* Adding validation for alias unique*/
+            'alias' => ['required', 'string', 'max:100', 'unique:users,alias'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

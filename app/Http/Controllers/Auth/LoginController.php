@@ -37,7 +37,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
+    /* Override the log in field, inthis case we're using alias insted email */
     public function username()
     {
         return 'alias';
