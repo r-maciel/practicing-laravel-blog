@@ -27,5 +27,9 @@ class DatabaseSeeder extends Seeder
             'category' => 'Health',
             'slug' => 'health',
         ]);
+        DB::table('categories')->insert([
+            'category' => 'History',
+            'slug' => 'history',
+        ]);
     }
 }
