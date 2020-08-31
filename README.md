@@ -5,7 +5,7 @@ This  application was build to practice  Laravel Framework, following Coders Tap
 - Laravel Framework 7.24
 - Bootstrap
 
-##Extra
+## Extra
 If you want to add categories to test the app, run:
 ```php
 php artisan migrate:fresh --seed
