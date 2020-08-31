@@ -1,0 +1,6 @@
+Create policies for an existing model
+>> php artisan make:policy PostPolicy --model=Post
+ 
+There many ways to add policies add the end of the day is your choice if you want to use policies or gates, and the way you want to definded them, if you wat to make only one for many resources or one for each resource, also you decide the way to aplied them to your resources
+
+Next time you make redirection for urls me and profile use a controller for profile and use authorization with policies instead of making a big middleware

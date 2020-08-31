@@ -18,13 +18,15 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->timestamps();
+            $table->string('category_slug');
 
             // Foreign Keys
             $table->foreignId('user_id')
               ->constrained()
               ->onDelete('cascade');
-            $table->foreignId('category_id')
-              ->constrained()
+            $table->foreign('category_slug')
+              ->references('slug')
+              ->on('categories')
               ->onDelete('cascade');
         });
     }

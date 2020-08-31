@@ -11,12 +11,24 @@
         {{-- Bootstrap --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <style>
+        	.header{
+        		height: 70px;
+        		padding: 10px 0 0 20px;
+        	}
+        	.header a{
+        		font-size: 25px;
+        	}
+        	.body{
+        		height: calc(100vh - 70px);
+        		display: flex;
+        		justify-content: center;
+        		align-items: center;
+        	}
+        </style>
     </head>
     <body>
-        @include('partials.navbar')
-        @yield('content')
-        <footer class="d-flex justify-content-center mt-4 mb-4">
-            <h3>Created By <a href="https://github.com/r-maciel">r-maciel</a></h3>
-        </footer>
+        <div class="header"><a class="navbar-brand" href="{{ route('principal') }}">CoolBlogger</a></div>
+        <div class="body"><h1>Page Not Found :(</h1></div>
     </body>
 </html>

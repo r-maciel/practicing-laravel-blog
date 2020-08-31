@@ -12,13 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('photos', 'PhotoController');
-
 Auth::routes();
+Route::get('/profile/{user}', 'UserController@index')->name('users.index')->middleware('profile.owner');
+Route::get('/me/{user}', 'UserController@index')->name('me.index')->middleware('profile.owner');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'WelcomeController@index')->name('principal');
+
+Route::get('categories/{category}/posts', 'CategoryController@show')->name('categories.posts.show');
+
+Route::get('/search', 'SearchController@search')->name('search');
+
+Route::resource('posts', 'PostController')->except('index');
+
+

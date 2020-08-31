@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /* Changing to alias instead of id for searching with route model binding*/
+    public function getRouteKeyName()
+    {
+        return 'alias';
+    }
+
+    //Add relationship to posts
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
